@@ -1498,16 +1498,6 @@ function isLandscapeMode() {
 
 function tryStartWebsiteWhenLandscape() {
     if (window.isWebsiteReady && typeof startWebsite === 'function') {
-        if (isLandscapeMode()) {
-            startWebsite();
-        } else {
-            // Đợi đến khi landscape mới start
-            window.addEventListener('resize', function onResize() {
-                if (isLandscapeMode()) {
-                    startWebsite();
-                    window.removeEventListener('resize', onResize);
-                }
-            });
-        }
+        startWebsite();
     }
 }

@@ -62,49 +62,23 @@ function checkOrientation() {
         const mediaQuery = window.matchMedia("(orientation: landscape)");
         isLandscape = mediaQuery.matches;
 
-        if (isLandscape) {
-            orientationLock.style.display = 'none';
-            matrixCanvas.style.display = 'block';
-            mainCanvas.style.display = 'block';
-            if (bookContainer) bookContainer.style.display = 'block';
-            if (book) book.style.display = 'block';
-            startWebsite();
+        // Always show content regardless of orientation
+        orientationLock.style.display = 'none';
+        matrixCanvas.style.display = 'block';
+        mainCanvas.style.display = 'block';
+        if (bookContainer) bookContainer.style.display = 'block';
+        if (book) book.style.display = 'block';
+        startWebsite();
 
-            // ✅ FIX 2: Force resize matrix khi chuyển sang landscape
+        setTimeout(() => {
+            forceResizeMatrix();
+        }, 100);
+
+        mediaQuery.addEventListener('change', () => {
+            // Re-resize matrix on orientation change
             setTimeout(() => {
                 forceResizeMatrix();
             }, 100);
-        } else {
-            orientationLock.style.display = 'flex';
-            matrixCanvas.style.display = 'none';
-            mainCanvas.style.display = 'none';
-            if (bookContainer) bookContainer.style.display = 'none';
-            if (book) book.style.display = 'none';
-            stopWebsite();
-        }
-
-        mediaQuery.addEventListener('change', (e) => {
-            isLandscape = e.matches;
-            if (isLandscape) {
-                orientationLock.style.display = 'none';
-                matrixCanvas.style.display = 'block';
-                mainCanvas.style.display = 'block';
-                if (bookContainer) bookContainer.style.display = 'block';
-                if (book) book.style.display = 'block';
-                startWebsite();
-
-                // ✅ FIX 3: Force resize matrix khi orientation change
-                setTimeout(() => {
-                    forceResizeMatrix();
-                }, 100);
-            } else {
-                orientationLock.style.display = 'flex';
-                matrixCanvas.style.display = 'none';
-                mainCanvas.style.display = 'none';
-                if (bookContainer) bookContainer.style.display = 'none';
-                if (book) book.style.display = 'none';
-                stopWebsite();
-            }
         });
     }
 }
@@ -238,9 +212,7 @@ function initMatrixRain() {
 S = {
     initialized: false,
     init: function () {
-        if (!isLandscape && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            return;
-        }
+        // Allow all orientations and devices
         var action = window.location.href,
             i = action.indexOf('?websiteId=');
 
@@ -506,9 +478,7 @@ S.UI = (function () {
 
     return {
         simulate: function (action) {
-            if (isLandscape || !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                performAction(action);
-            }
+            performAction(action);
         },
         reset: function (destroy) {
             reset(destroy);
