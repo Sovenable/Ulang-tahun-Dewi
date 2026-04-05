@@ -723,6 +723,9 @@ S.ShapeBuilder = (function () {
         letter: function (l) {
             var s = 0;
 
+            // Sync shapeCanvas to current viewport before calculating dots
+            fit();
+
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             const isSmallScreen = window.innerWidth < 768;
             const baseFontSize = (isMobile || isSmallScreen) ? 250 : 500; // Giảm font size cho mobile

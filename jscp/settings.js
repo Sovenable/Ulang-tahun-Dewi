@@ -18,8 +18,8 @@ let settings = {
         { image: './image/Birthday!/photo2.jpg', content: 'Happy Birthday sayangkuuu, Semoga hari-harimu minim error, hati kamu nggak pernah overload, dan setiap masalah yang datang selalu ketemu solusinya dengan cepat.' },
         { image: './image/Birthday!/photo3.jpg', content: '' },
         { image: './image/Birthday!/photo4.jpg', content: 'Semoga hidup kamu selalu di-update dengan kebahagiaan versi terbaru setiap harinya.' },
-        { image: './image/Birthday!/Photo5.jpg', content: '' },
-        { image: './image/Birthday!/Photo6.jpg', content: 'Terima kasih sudah jadi orang yang bertanggung jawab dan baik. Aku percaya orang baik akan selalu dipertemukan dengan hal-hal yang baik juga' },
+        { image: './image/Birthday!/photo5.jpg', content: '' },
+        { image: './image/Birthday!/photo6.jpg', content: 'Terima kasih sudah jadi orang yang bertanggung jawab dan baik. Aku percaya orang baik akan selalu dipertemukan dengan hal-hal yang baik juga' },
         { image: './image/Birthday!/9.jpg', content: '' } // End cover
     ],
     enableBook: true,
@@ -347,8 +347,8 @@ function initializeDefaultSettings() {
             { image: './image/Birthday!/photo2.jpg', content: 'Happy Birthday sayangkuuu, Semoga hari-harimu minim error, hati kamu nggak pernah overload, dan setiap masalah yang datang selalu ketemu solusinya dengan cepat.' },
             { image: './image/Birthday!/photo3.jpg', content: '' },
             { image: './image/Birthday!/photo4.jpg', content: 'Semoga hidup kamu selalu di-update dengan kebahagiaan versi terbaru setiap harinya.' },
-            { image: './image/Birthday!/Photo5.jpg', content: '' },
-            { image: './image/Birthday!/Photo6.jpg', content: 'Terima kasih sudah jadi orang yang bertanggung jawab dan baik. Aku percaya orang baik akan selalu dipertemukan dengan hal-hal yang baik juga. Di mataku, kamu selalu jadi versi terbaik yang pernah aku temui.' },
+            { image: './image/Birthday!/photo5.jpg', content: '' },
+            { image: './image/Birthday!/photo6.jpg', content: 'Terima kasih sudah jadi orang yang bertanggung jawab dan baik. Aku percaya orang baik akan selalu dipertemukan dengan hal-hal yang baik juga. Di mataku, kamu selalu jadi versi terbaik yang pernah aku temui.' },
             { image: './image/Birthday!/9.jpg', content: '' } // End cover
         ]
     };
